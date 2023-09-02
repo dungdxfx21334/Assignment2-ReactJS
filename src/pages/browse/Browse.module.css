@@ -1,3 +1,4 @@
 .browse {
   overflow: auto;
+  position: relative;
 }
