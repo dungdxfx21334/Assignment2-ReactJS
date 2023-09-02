@@ -1,14 +1,17 @@
 import React from 'react';
 import Navbar from './navbar/Navbar';
-import LoremIpsum from 'react-lorem-ipsum';
 import classes from './Browse.module.css';
+import Banner from './banner/Banner';
+import ApiContextProvider from '../../context/ApiContextProvider';
 
 function Browse() {
   return (
-    <div className={classes.browse}>
-      <Navbar></Navbar>
-      <LoremIpsum p={100}></LoremIpsum>
-    </div>
+    <ApiContextProvider>
+      <div className={classes.browse}>
+        <Navbar></Navbar>
+        <Banner></Banner>
+      </div>
+    </ApiContextProvider>
   );
 }
 

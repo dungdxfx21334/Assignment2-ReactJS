@@ -1,6 +1,8 @@
+// This custom hook is used to fetch data from the API because there would be a alot of duplicated codes if fetching
+// is done for every gernes
+
 import { useEffect, useState } from 'react'
 
-// `https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}&language=en-US`
 const useFetchMovies = url => {
   const [moviesList, setMoviesList] = useState([])
   useEffect(() => {

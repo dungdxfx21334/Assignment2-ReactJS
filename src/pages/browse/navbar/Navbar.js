@@ -35,10 +35,10 @@ function Navbar () {
     <nav className={classes.container}>
       <ul className={navbarClasses}>
         <li className={classes.logo} onClick={navigateToHomeHandler}>
-          <a hef='/'>Movie App</a>
+          <a href='/'>Movie App</a>
         </li>
         <li className={classes.search} onClick={navigateToSearcPageHandler}>
-          <a hef='/search'>
+          <a href='/search'>
             <svg
               className='svg-inline--fa fa-search fa-w-16'
               fill='#ccc'
