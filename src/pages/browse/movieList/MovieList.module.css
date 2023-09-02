@@ -1,0 +1,30 @@
+.movieList {
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.header {
+  margin: 1rem 1rem;
+}
+.container {
+  padding-bottom: 0.4rem;
+
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+}
+
+.item:hover img {
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.image {
+  width: 15rem;
+}
+
+.original::-webkit-scrollbar {
+  height: thin;
+}
