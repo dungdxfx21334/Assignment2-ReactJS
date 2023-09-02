@@ -1,22 +1,25 @@
 // This custom hook is used to fetch data from the API because there would be a alot of duplicated codes if fetching
-// is done for every gernes
+// is done for every movies
 
 import { useEffect, useState } from 'react'
 
-const useFetchMovies = url => {
-  const [moviesList, setMoviesList] = useState({})
+const useFetchDetail = url => {
+  const [detail, setDetail] = useState({})
   const [isLoading, setIsLoading] = useState(true)
+
   useEffect(() => {
     const fetchingData = async () => {
+      console.log(url)
       const response = await fetch(url)
       console.log(response)
+
       if (!response.ok) {
         throw new Error(response.status)
       }
 
       const data = await response.json()
       console.log(data)
-      setMoviesList(data)
+      setDetail(data)
       setIsLoading(false)
     }
 
@@ -24,7 +27,7 @@ const useFetchMovies = url => {
       console.log(error.message)
     })
   }, [url])
-  return { moviesList, isLoading }
+  return { detail, isLoading }
 }
 
-export default useFetchMovies
+export default useFetchDetail
