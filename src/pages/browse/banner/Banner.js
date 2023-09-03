@@ -7,7 +7,7 @@ import classes from './Banner.module.css'
 
 const Banner = () => {
   const API_KEY = useContext(ApiKeyContext).API_KEY
-  const url = `https://api.themoviedb.org/3//discover/tv?api_key=${API_KEY}&with_network=123`
+  const url = `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&with_network=123`
 
   const { moviesList, isLoading } = useFetchMovies(url)
 
