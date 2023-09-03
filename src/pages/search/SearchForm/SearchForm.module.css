@@ -1,0 +1,52 @@
+.form {
+  width: 75vw;
+  height: 11rem;
+  margin: 15rem 10rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.searchInput {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  position: relative;
+  border-radius: 2rem;
+}
+
+.searchInput input {
+  height: 100%;
+  font-size: 1.5rem;
+  width: 100%;
+  padding: 0 2rem;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid rgb(38, 115, 179);
+}
+
+.icon {
+  display: inline-block;
+  width: 2rem;
+  height: 2em;
+  position: absolute;
+  right: 1rem;
+}
+.btnGroup {
+  margin: 0 4rem 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.btnCancel {
+  background: transparent;
+  color: black;
+  border: none;
+}
+
+.btnSearch {
+  background-color: rgb(38, 115, 179);
+  border: none;
+  box-shadow: 1rem;
+}
