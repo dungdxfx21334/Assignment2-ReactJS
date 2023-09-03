@@ -1,6 +1,8 @@
 // This custom hook is used to fetch data from the API because there would be a alot of duplicated codes if fetching
 // is done for every movies
 
+// Side notes: This hook and the hook useFetchMovies basically do the same thing and can remove one of them. A little
+// bit of effort in refactoring so I'm gonna leave it like this.
 import { useEffect, useState } from 'react'
 
 const useFetchDetail = url => {
