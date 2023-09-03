@@ -11,7 +11,7 @@
 .container {
   list-style-type: none;
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   padding-bottom: 0.4rem;
   flex-direction: row;
 }
@@ -24,8 +24,4 @@
 .image {
   width: 10rem;
   height: 15.7rem;
-}
-
-.original::-webkit-scrollbar {
-  height: thin;
 }
