@@ -1,0 +1,27 @@
+.detail {
+  height: 20rem;
+  display: flex;
+  margin: 0.5rem 0.6rem 0.5rem 2rem;
+  gap: 1rem;
+}
+
+.detailTexts,
+.trailer {
+  flex: 1 1 0px;
+}
+
+.detailTexts h2 {
+  font-size: 2rem;
+  margin: 1.5rem 0rem 0;
+  border-bottom: black solid;
+  padding-bottom: 0.5rem;
+}
+
+.accessories {
+  margin: 1rem 0;
+  font-weight: 500;
+}
+
+.trailer {
+  border-radius: 1rem;
+}
