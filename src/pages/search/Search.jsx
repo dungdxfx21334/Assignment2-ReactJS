@@ -1,9 +1,10 @@
 import React from 'react';
+import Navbar from '../browse/navbar/Navbar';
 
 const Search = () => {
   return (
     <div className="app">
-      <h1>Search</h1>
+      <Navbar></Navbar>
     </div>
   );
 };
