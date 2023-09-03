@@ -9,13 +9,11 @@ const useFetchMovies = url => {
   useEffect(() => {
     const fetchingData = async () => {
       const response = await fetch(url)
-      console.log(response)
       if (!response.ok) {
         throw new Error(response.status)
       }
 
       const data = await response.json()
-      console.log(data)
       setMoviesList(data)
       setIsLoading(false)
     }

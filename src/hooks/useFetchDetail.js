@@ -4,10 +4,11 @@
 import { useEffect, useState } from 'react'
 
 const useFetchDetail = url => {
-  const [detail, setDetail] = useState({})
+  const [detail, setDetail] = useState()
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
+    setIsLoading(true)
     const fetchingData = async () => {
       console.log(url)
       const response = await fetch(url)
