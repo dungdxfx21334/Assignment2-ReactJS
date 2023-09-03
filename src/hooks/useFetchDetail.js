@@ -10,16 +10,13 @@ const useFetchDetail = url => {
   useEffect(() => {
     setIsLoading(true)
     const fetchingData = async () => {
-      console.log(url)
       const response = await fetch(url)
-      console.log(response)
 
       if (!response.ok) {
         throw new Error(response.status)
       }
 
       const data = await response.json()
-      console.log(data)
       setDetail(data)
       setIsLoading(false)
     }

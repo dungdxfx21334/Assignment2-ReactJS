@@ -13,7 +13,6 @@ const Original = props => {
   const { moviesList, isLoading } = useFetchMovies(url)
   const detailCtx = useContext(MovieDetailContext)
 
-  console.log(moviesList)
   if (isLoading) {
     // Making sure no code is executed before the movies are successfully retrieved
     return <p>Loading...</p>
@@ -21,7 +20,6 @@ const Original = props => {
 
   const movieListRender = moviesList.results.map(movie => {
     const posterPath = movie['poster_path']
-    console.log(movie.id)
     return (
       <li key={movie.id} className={classes.item}>
         <img
