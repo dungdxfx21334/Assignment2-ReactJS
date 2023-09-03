@@ -1,12 +1,17 @@
 import React from 'react'
 import useFetchMovies from '../../../hooks/useFetchMovies'
-
+import { useContext } from 'react'
+import MovieDetailContext from '../../../context/movie-detail'
+import { ApiKeyContext } from '../../../context/api-context'
 import classes from './MovieList.module.css'
+import Detail from '../detail/Detail.js'
 
 const MovieList = ({ searchPath, genre }) => {
+  const API_KEY = useContext(ApiKeyContext).API_KEY
   const url = `https://api.themoviedb.org/3${searchPath}`
 
   const { moviesList, isLoading } = useFetchMovies(url)
+  const detailCtx = useContext(MovieDetailContext)
 
   if (isLoading) {
     // Making sure no code is executed before the movies are successfully retrieved
@@ -16,7 +21,15 @@ const MovieList = ({ searchPath, genre }) => {
   const movieListRender = moviesList.results.map(movie => {
     const backdropPath = movie['backdrop_path']
     return (
-      <li key={movie.id} className={classes.item}>
+      <li
+        key={movie.id}
+        className={classes.item}
+        onClick={
+          movie.id === detailCtx.showingMovieId
+            ? detailCtx.hideDetail
+            : detailCtx.showDetail.bind(null, movie.id, genre)
+        }
+      >
         <img
           className={classes.image}
           src={`https://image.tmdb.org/t/p/original${backdropPath}`}
@@ -25,11 +38,16 @@ const MovieList = ({ searchPath, genre }) => {
       </li>
     )
   })
-
+  const detailUrl = `https://api.themoviedb.org/3/movie/${detailCtx.showingMovieId}?api_key=${API_KEY}&with_network=123&append_to_response=videos`
   return (
-    <div className={classes.movieList}>
-      <h1 className={classes.header}>{genre}</h1>
-      <ul className={classes.container}>{movieListRender}</ul>
+    <div>
+      <div className={classes.movieList}>
+        <h1 className={classes.header}>{genre}</h1>
+        <ul className={classes.container}>{movieListRender}</ul>
+      </div>
+      {detailCtx.detailIsShown && detailCtx.genre === genre && (
+        <Detail url={detailUrl}></Detail>
+      )}
     </div>
   )
 }
