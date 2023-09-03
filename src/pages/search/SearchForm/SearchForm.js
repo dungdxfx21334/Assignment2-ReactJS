@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import SearchIcon from '../SearchIcon'
 
 import Button from '../../../UI/Button'
@@ -7,6 +7,7 @@ import { useRef } from 'react'
 import { useContext } from 'react'
 import { ApiKeyContext } from '../../../context/api-context'
 import { useState } from 'react'
+import ModalContextProvider from '../../../context/ModalContextProvider'
 
 import ResultList from '../result/ResultList'
 const SearchForm = () => {
@@ -33,7 +34,7 @@ const SearchForm = () => {
     }
   }
   return (
-    <Fragment>
+    <ModalContextProvider>
       <form className={classes.form} onSubmit={searchHandler}>
         <div className={classes.searchInput}>
           <input type='text' ref={inputSearchRef}></input>
@@ -51,9 +52,8 @@ const SearchForm = () => {
           </Button>
         </div>
       </form>
-
       {showResult && <ResultList resultList={resultList}></ResultList>}
-    </Fragment>
+    </ModalContextProvider>
   )
 }
 

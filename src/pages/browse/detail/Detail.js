@@ -2,7 +2,7 @@ import React from 'react'
 import useFetchDetail from '../../../hooks/useFetchDetail'
 import classes from './Detail.module.css'
 
-const Detail = ({ url }) => {
+const Detail = ({ url, className }) => {
   const { detail: movieDetail, isLoading } = useFetchDetail(url)
 
   if (isLoading) {
@@ -15,7 +15,7 @@ const Detail = ({ url }) => {
     : movieDetail['backdrop_path']
 
   return (
-    <div className={classes.detail}>
+    <div className={`${classes.detail} ${className}`}>
       <div className={classes.detailTexts}>
         <h2>{movieDetail.title}</h2>
         <div className={classes.accessories}>
