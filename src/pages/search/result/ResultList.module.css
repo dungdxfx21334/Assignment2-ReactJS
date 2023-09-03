@@ -1,0 +1,21 @@
+.title {
+  margin: 0 2rem 0;
+}
+
+.container {
+  margin: 2rem 2rem;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+  gap: 1rem;
+}
+
+.item img {
+  width: 100%;
+}
+
+.item:hover img {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
